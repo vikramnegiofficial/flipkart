@@ -39,6 +39,10 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  tc: {
+    type: Boolean,
+    required: true,
+  },
 });
 
 const user = mongoose.model("user", userSchema);

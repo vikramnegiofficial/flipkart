@@ -3,8 +3,8 @@ import CustomButton from "./CustomButton";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 // import DataProvider from "../../context/dataProvider";
-// import { useContext } from "react";
-// import { DataContext } from "../../context/dataProvider";
+import { useContext } from "react";
+import { DataContext } from "../../context/dataProvider";
 
 const StyledBox = styled(Box)`
   margin: 0 20px;
@@ -26,12 +26,13 @@ const StyledTypography = styled(Typography)`
 `;
 
 const RigthSidedDiv = () => {
-  // const { userAcc } = useContext(DataContext);
+  const { userAcc } = useContext(DataContext);
+
   return (
     <StyledBoxCont>
-      {true ? (
+      {userAcc ? (
         <Typography style={{ margin: 20, fontSize: 15, fontWeight: 600 }}>
-          {`My Account`}
+          Hii {userAcc.data.username}!
         </Typography>
       ) : (
         <CustomButton title="Login" />

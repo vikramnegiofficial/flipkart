@@ -7,6 +7,7 @@ export const Connection = async (username, password) => {
     mongoose.connect(URL, {
       useUnifiedTopology: true,
       useNewUrlParser: true,
+      DbName: "flipkart",
     });
     console.log("database connectd successfully");
   } catch (e) {
