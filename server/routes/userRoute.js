@@ -1,4 +1,5 @@
 import express from "express";
+
 // import userSignUp from "../controller/userController.js";
 import UserController from "../controller/userController.js";
 import checkUserAuth from "../middlewares/authMiddleware.js";

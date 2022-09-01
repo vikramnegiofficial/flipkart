@@ -2,7 +2,8 @@ import express from "express";
 import dotenv from "dotenv";
 import Connection from "./config/mongodb.js";
 import DefaultData from "./defaultdata.js";
-import userRoutes from "./routes/route.js";
+import userRoutes from "./routes/userRoute.js";
+import productRoutes from "./routes/productsRouts.js";
 import cors from "cors";
 import bodyParser from "body-parser";
 
@@ -26,6 +27,9 @@ app.use(express.json());
 
 // UserRoutes
 app.use("/api/user/", userRoutes);
+
+// ProductRoutes
+app.use("/products", productRoutes);
 
 app.listen(PORT, () => {
   console.log(`Server is listening at ${PORT} Port`);
